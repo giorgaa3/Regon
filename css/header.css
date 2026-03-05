@@ -1,0 +1,68 @@
+.header{
+  position:absolute;
+  top:100px;
+  left:170px;
+  right:170px;
+  z-index:10;
+}
+
+.header-inner{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+.logo img{
+  width:213px;
+}
+
+/* right side icons */
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:20px;   /* menu ↔ language დაშორება */
+  margin-top:22px;
+}
+
+/* burger */
+
+.menu-icon{
+  height:26px;
+  width:auto;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+/* globe + GE container */
+
+.language{
+  display:flex;
+  align-items:center;
+  gap:8px;   /* globe ↔ GE დაშორება */
+}
+
+/* globe */
+
+.globe-icon{
+  height:26px;
+  width:auto;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+/* GE */
+
+.lang-text{
+  height:14px;
+  width:auto;
+  opacity:.95;
+}
+
+/* hover animation */
+
+.menu-icon:hover,
+.globe-icon:hover{
+  transform:translateY(-2px);
+  opacity:.85;
+}
