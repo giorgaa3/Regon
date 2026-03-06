@@ -1,70 +1,124 @@
 .solutions-strip{
-  background:#fff;
-  overflow-x:auto;
-  overflow-y:hidden;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
+
+  background: #fff;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
 }
 
-.solutions-strip::-webkit-scrollbar{ height: 10px; }
-.solutions-strip::-webkit-scrollbar-thumb{ background: rgba(0,0,0,.12); border-radius: 10px; }
-.solutions-strip::-webkit-scrollbar-track{ background: transparent; }
+/* =========================
+   Scrollbar
+========================= */
+
+.solutions-strip::-webkit-scrollbar{
+  height: 10px;
+}
+
+.solutions-strip::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.12);
+  border-radius: 10px;
+}
+
+.solutions-strip::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* =========================
+   Grid
+========================= */
 
 .solutions-grid{
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns:320px;
-  width:max-content;
-  margin:0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 320px;
+
+  width: max-content;
+  margin: 0 auto;
 }
 
+/* =========================
+   Card
+========================= */
+
 .sol-card{
-  position:relative;
-  height:410px;
-  padding:90px 40px 0;
-  background:#fff;
-  border-right:1px solid #E1E3EB;
-  overflow:hidden;
+  position: relative;
+
+  height: 410px;
+  padding: 90px 40px 0;
+
+  background: #fff;
+  border-right: 1px solid #E1E3EB;
+
+  overflow: hidden;
+
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.sol-card:last-child{ border-right:none; }
+.sol-card:last-child{
+  border-right: none;
+}
 
 .sol-card:hover{
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(0,0,0,.06);
 }
 
+/* =========================
+   Text
+========================= */
+
 .sol-card h3{
-  margin:0;
-  width:240px;
-  font-size:28px;
-  font-weight:300;
-  line-height:1.5;
-  color:#545454;
+  margin: 0;
+
+  max-width: 240px;
+
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.5;
+
+  color: #545454;
 }
 
 .sol-card p{
-  margin:24px 0 0;
-  width:240px;
-  font-size:16px;
-  font-weight:300;
-  line-height:1.5;
-  color:#545454;
+  margin-top: 24px;
+
+  max-width: 240px;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+
+  color: #545454;
 }
 
+/* =========================
+   Arrow
+========================= */
+
 .sol-arrow{
-  position:absolute;
-  right:24px;
-  bottom:22px;
-  font-size:22px;
-  font-weight:600;
-  user-select:none;
-  cursor:pointer;
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  cursor: pointer;
+  user-select: none;
+
   transition: transform .2s ease, opacity .2s ease;
 }
 
-.sol-arrow:hover{ transform: translateX(8px); opacity:.85; }
+.sol-arrow:hover{
+  transform: translateX(8px);
+  opacity: .85;
+}
+
+/* arrow colors */
 
 .sol-arrow.is-red{ color:#EF4136; }
 .sol-arrow.is-blue{ color:#2F8DD7; }
@@ -73,36 +127,58 @@
 .sol-arrow.is-sky{ color:#63B0D9; }
 .sol-arrow.is-white{ color:#fff; }
 
+/* =========================
+   Image card
+========================= */
+
 .sol-card.is-image{
-  padding:0;
-  background:#000;
+  padding: 0;
+  background: #000;
 }
 
+/* background image */
+
 .sol-card.is-image .sol-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:1;
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 1;
 }
 
 .sol-card.is-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
   background: rgba(0,0,0,.18);
-  z-index:2;
-  pointer-events:none;
+
+  z-index: 2;
+  pointer-events: none;
 }
 
 .sol-card.is-image .sol-overlay{
-  position:absolute;
-  inset:0;
-  padding:90px 40px 0;
-  z-index:3;
+  position: absolute;
+  inset: 0;
+
+  padding: 90px 40px 0;
+
+  z-index: 3;
 }
 
-.sol-card.is-image .sol-overlay h3{ color:#fff; }
-.sol-card.is-image .sol-overlay p{ color: rgba(255,255,255,.78); }
-.sol-card.is-image .sol-arrow{ z-index:4; }
+.sol-card.is-image .sol-overlay h3{
+  color: #fff;
+}
+
+.sol-card.is-image .sol-overlay p{
+  color: rgba(255,255,255,.78);
+}
+
+.sol-card.is-image .sol-arrow{
+  z-index: 4;
+}

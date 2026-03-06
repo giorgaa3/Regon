@@ -1,73 +1,129 @@
 .hero{
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: 115vh;
+  color: #fff;
 
   background-image:
-    linear-gradient(rgba(46,97,116,0.25), rgba(46,97,116,0.40)),
+    linear-gradient(rgba(46, 97, 116, 0.14), rgba(46, 97, 116, 0.26)),
     url("../assets/images/hero.jpg");
-
   background-size: cover;
-  background-position: 73% center;
+  background-position: 72% center;
   background-repeat: no-repeat;
-  color: #fff;
 }
 
-/* Figma: X = 170 (container აკეთებს), Y ~ 390 */
+/* =========================
+   Content
+========================= */
+
 .hero-content{
-  width: min(711px, 100%);
-  padding-top: 390px;    /* ზუსტად Figma desktop-ზე */
-  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  width: min(720px, 100%);
+  padding-top: 320px;
+  padding-bottom: 140px;
 }
 
-/* typography */
+/* =========================
+   TEXT
+========================= */
+
 .hero h1{
-  font-size: 100px;      /* Figma */
-  font-weight: 500;
-  line-height: 1;
   margin: 0;
+  font-size: 88px;
+  font-weight: 500;
+  line-height: 0.98;
+  white-space: nowrap;
 }
 
 .hero p{
-  font-size: 56px;
-  font-weight: 300;      /* safer: ბევრ SF Pro Rounded ფაილს 200 არ აქვს */
-  margin: 10px 0 0;
-  opacity: .92;          /* ვიზუალურად უფრო “thin” ეფექტი */
+  margin: 0;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.92;
 }
 
-/* button */
+/* =========================
+   Button
+========================= */
+
 .hero-btn{
-  margin-top: 28px;
-  padding: 16px 34px;
-
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.35);
-  color: rgba(255,255,255,0.92);
-
   display: inline-flex;
   align-items: center;
   gap: 22px;
 
+  margin-top: 14px;
+  padding: 16px 34px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+
   cursor: pointer;
-  transition: .25s ease;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
 }
 
 .hero-btn:hover{
-  background: rgba(255,255,255,0.10);
-  border-color: rgba(255,255,255,0.55);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.55);
   transform: translateY(-2px);
 }
 
-/* --- Responsive tweaks --- */
 @media (max-width: 1024px){
-  .hero-content{ padding-top: 260px; }
-  .hero h1{ font-size: 72px; }
-  .hero p{ font-size: 40px; }
+  .hero{
+    min-height: 100vh;
+    background-position: 68% center;
+  }
+
+  .hero-content{
+    width: min(560px, 100%);
+    padding-top: 260px;
+    padding-bottom: 110px;
+    gap: 6px;
+  }
+
+  .hero h1{
+    font-size: 72px;
+  }
+
+  .hero p{
+    font-size: 40px;
+  }
 }
 
+/* =========================
+   Mobile
+========================= */
+
 @media (max-width: 480px){
-  .hero-content{ padding-top: 200px; padding-bottom: 56px; }
-  .hero h1{ font-size: 48px; }
-  .hero p{ font-size: 28px; }
+  .hero{
+    min-height: 92vh;
+    background-position: 62% center;
+  }
+
+  .hero-content{
+    width: 100%;
+    padding-top: 190px;
+    padding-bottom: 80px;
+    gap: 4px;
+  }
+
+  .hero h1{
+    font-size: 48px;
+    white-space: normal;
+  }
+
+  .hero p{
+    font-size: 28px;
+  }
+
+  .hero-btn{
+    margin-top: 10px;
+    padding: 14px 24px;
+    gap: 14px;
+  }
 }

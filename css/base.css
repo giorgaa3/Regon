@@ -1,85 +1,73 @@
 /* =========================
-   Base / Reset
+   Reset
 ========================= */
 
-html, body{
-  margin: 0;
-  padding: 0;
+html,
+body{
+  margin:0;
+  padding:0;
 }
 
-*, *::before, *::after{
-  box-sizing: border-box;
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
 }
 
 img{
-  display: block;
-  max-width: 100%;
-  height: auto;
+  display:block;
+  max-width:100%;
+  height:auto;
 }
 
 /* =========================
-   Layout tokens
+   Layout
 ========================= */
 
 :root{
-  /* Figma desktop: 1440 - 170 - 170 = 1100 */
-  --container: 1100px;
-
-  /* left/right padding: desktop-ზე 170px, პატარა ეკრანზე ჩამოდის */
-  --pad: clamp(16px, 11.8vw, 170px);
+  --container:1100px;
+  --pad:170px;
 }
 
 .container{
-  width: 100%;
-  padding-left: var(--pad);
-  padding-right: var(--pad);
-  margin: 0;
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
 }
 
 /* =========================
    Font
-   NOTE:
-   - თუ შენი .woff2 VARIABLE FONT არის, დატოვე "100 900"
-   - თუ არაა variable, შეცვალე 400-ზე (ქვემოთ ორივე ვარიანტი დაგიტოვე)
 ========================= */
 
-/* ვარიანტი A (Variable font) */
 @font-face{
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/sf-pro-rounded.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+  font-family:"SF Pro Rounded";
+  src:url("../assets/fonts/sf-pro-rounded.woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
 }
-
-/* ვარიანტი B (Non-variable) — თუ დაინახე რომ thin/light არ მუშაობს, ეს გამოიყენე და ზედა ვარიანტი წაშალე */
-/*
-@font-face{
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/sf-pro-rounded.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-*/
 
 /* =========================
-   Body defaults
+   Body
 ========================= */
 
 body{
-  font-family: "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family:"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background:#fff;
+  color:#111;
 
-  overflow-x: hidden;
-  background: #fff;
-  color: #111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+
+  overflow-x:hidden;
 }
 
-/* Optional: nicer focus (accessibility) */
+/* =========================
+   Accessibility
+========================= */
+
 :focus-visible{
-  outline: 2px solid rgba(255,255,255,0.85);
-  outline-offset: 3px;
+  outline:2px solid rgba(255,255,255,.85);
+  outline-offset:3px;
 }
